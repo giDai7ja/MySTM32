@@ -45,7 +45,6 @@ void Init(void){
 	RCC->APB2ENR |= RCC_APB2ENR_SPI1EN; // SPI
 	RCC->APB1ENR |= RCC_APB1ENR_I2C1EN; // i2c
 	
-	
 	GPIOA->MODER = GPIO_MODER_MODER4_1  |
 								 GPIO_MODER_MODER5_1  |
 								 GPIO_MODER_MODER7_1  |
@@ -78,6 +77,7 @@ void Init(void){
 	I2C1->TIMINGR = 0x00201D2B;
 
 	I2C1->CR1 |= I2C_CR1_PE;
+	
 // I2C init	
 
 }
