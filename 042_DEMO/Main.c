@@ -106,14 +106,17 @@ void SendI2C(unsigned char ADDR, unsigned char DATA){
 	
 	I2C1->CR2 = ADDR<<1;
 	I2C1->CR2 |= 1<<16;
+	I2C1->CR2 |= I2C_CR2_AUTOEND;
 	I2C1->CR2 |= I2C_CR2_START; // Start
 
   while(!(I2C1->ISR & I2C_ISR_TXE)){};	
-	I2C1->CR2 |= I2C_CR2_STOP;  // Stop
+//	I2C1->CR2 |= I2C_CR2_STOP;  // Stop
 
-		I2C1->TXDR = 0x00;
+	I2C1->TXDR = 0x00;
 		
-	I2C1->ICR = I2C_ICR_ADDRCF;
+//	I2C1->ICR = I2C_ICR_ADDRCF;
+  while(!(I2C1->ISR & I2C_ISR_TC)){};	
+	I2C1->CR2 |= I2C_CR2_STOP;  // Stop
 
 		
 	I2C1->CR2 = ADDR<<1 | 1;
