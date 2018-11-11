@@ -11,7 +11,7 @@ void Send7219(unsigned char ADDR, unsigned char DATA);
 void Delay(unsigned int Val);
 void SendI2C(unsigned char ADDR, unsigned char DATA);
 
-unsigned char TMP;
+unsigned char TMP, TMP2, TMP3;
 	
 int main(void)
 {
@@ -36,12 +36,18 @@ while (1) {
 		}
 */
     SendI2C(0x68, TMP);
-		Send7219 (1, TMP);
+
+		Send7219 (1, ( TMP & 0x0F ));
+		Send7219 (2, ( (TMP>>4) & 0x07 ));
+		Send7219 (3, ( TMP2 & 0x0F ) | 0x80);
+		Send7219 (4, ( (TMP2>>4) & 0x07 ));
+		Send7219 (5, ( TMP3 & 0x0F ) | 0x80);
+		Send7219 (6, ( (TMP3>>4) & 0x07 ));
 
 	
 //		Send7219( 0x0A, Intensity/3);
 //		Intensity++;
-		Delay(300000);
+		Delay(30000);
 		/*
 	}
 		*/
@@ -49,8 +55,9 @@ while (1) {
 }
 
 void Init(void){
-	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;  // GPIO
+	RCC->AHBENR |= RCC_AHBENR_GPIOAEN;  // GPIOA
 	RCC->APB2ENR |= RCC_APB2ENR_SPI1EN; // SPI
+	RCC->AHBENR |= RCC_AHBENR_GPIOFEN;  // GPIOF
 	RCC->APB1ENR |= RCC_APB1ENR_I2C1EN; // i2c
 	
 	
@@ -74,6 +81,10 @@ void Init(void){
 // I2C1 init
 	I2C1->CR1 &= ~I2C_CR1_PE;
 	
+	GPIOF->AFR[0] = 1 | 1<<4;
+	
+	RCC->CFGR3 |= RCC_CFGR3_I2C1SW_SYSCLK;
+	
 	GPIOF->MODER = GPIO_MODER_MODER0_1 |
 								 GPIO_MODER_MODER1_1;
 								 
@@ -84,10 +95,35 @@ void Init(void){
 									 GPIO_OSPEEDER_OSPEEDR1;
 									 
 	I2C1->TIMINGR = 0x00201D2B;
+//	I2C1->TIMINGR = 0x0010020A;
 
 	I2C1->CR1 |= I2C_CR1_PE;
-// I2C init	
 
+
+	I2C1->CR2 = 0x68<<1;
+	I2C1->CR2 |= 1<<16;
+//	I2C1->CR2 |= I2C_CR2_AUTOEND;
+	I2C1->CR2 |= I2C_CR2_START; // Start
+
+  while(!(I2C1->ISR & I2C_ISR_TXIS)){};	
+
+	I2C1->TXDR = 0x00;
+/*
+  while(!(I2C1->ISR & I2C_ISR_TXIS)){};	
+	I2C1->TXDR = 0x00;
+		
+  while(!(I2C1->ISR & I2C_ISR_TXIS)){};	
+	I2C1->TXDR = 0x10;
+
+  while(!(I2C1->ISR & I2C_ISR_TXIS)){};	
+	I2C1->TXDR = 0x21;
+		
+		*/
+		
+  while(!(I2C1->ISR & I2C_ISR_TC)){};	
+	I2C1->CR2 |= I2C_CR2_STOP;  // Stop
+
+// I2C init	
 
 }
 
@@ -106,26 +142,27 @@ void SendI2C(unsigned char ADDR, unsigned char DATA){
 	
 	I2C1->CR2 = ADDR<<1;
 	I2C1->CR2 |= 1<<16;
-	I2C1->CR2 |= I2C_CR2_AUTOEND;
+//	I2C1->CR2 |= I2C_CR2_AUTOEND;
 	I2C1->CR2 |= I2C_CR2_START; // Start
 
-  while(!(I2C1->ISR & I2C_ISR_TXE)){};	
-//	I2C1->CR2 |= I2C_CR2_STOP;  // Stop
+  while(!(I2C1->ISR & I2C_ISR_TXIS)){};	
 
 	I2C1->TXDR = 0x00;
-		
-//	I2C1->ICR = I2C_ICR_ADDRCF;
-  while(!(I2C1->ISR & I2C_ISR_TC)){};	
-	I2C1->CR2 |= I2C_CR2_STOP;  // Stop
 
-		
+  while(!(I2C1->ISR & I2C_ISR_TC)){};	
+	I2C1->CR2 |= I2C_CR2_STOP;  // Stop		
+	
 	I2C1->CR2 = ADDR<<1 | 1;
-	I2C1->CR2 |= 1<<16;
+	I2C1->CR2 |= 3<<16;
 	I2C1->CR2 |= I2C_CR2_RD_WRN;
 	I2C1->CR2 |= I2C_CR2_START; // Start
 		
 while(!(I2C1->ISR & I2C_ISR_RXNE)){};
 	TMP = I2C1->RXDR;
+while(!(I2C1->ISR & I2C_ISR_RXNE)){};
+	TMP2 = I2C1->RXDR;
+while(!(I2C1->ISR & I2C_ISR_RXNE)){};
+	TMP3 = I2C1->RXDR;
 		
 	I2C1->CR2 |= I2C_CR2_STOP;  // Stop
 

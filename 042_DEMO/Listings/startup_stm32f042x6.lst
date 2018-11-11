@@ -444,9 +444,9 @@ Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=.\objects\startup_stm32f042x6.d -o.\objects\startup_stm32f042x6.o 
 -I.\RTE\_Target_1 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IC:
 \Keil_v5\ARM\PACK\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\In
-clude --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 526" --pr
-edefine="_RTE_ SETA 1" --predefine="STM32F042x6 SETA 1" --list=.\listings\start
-up_stm32f042x6.lst RTE\Device\STM32F042F6Px\startup_stm32f042x6.s
+clude --predefine="__UVISION_VERSION SETA 526" --predefine="_RTE_ SETA 1" --pre
+define="STM32F042x6 SETA 1" --list=.\listings\startup_stm32f042x6.lst RTE\Devic
+e\STM32F042F6Px\startup_stm32f042x6.s
 
 
 
@@ -983,4 +983,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-391 symbols in table
+390 symbols in table
