@@ -6,8 +6,9 @@ unsigned int i;
 
 int main(void){
 	OW_Init();
-
-	OW_Send(OW_SEND_RESET, "\xcc\x44", 2, NULL, NULL, OW_NO_READ);
+unsigned char command[2]="\xcc\x44";
+	
+	OW_Send(OW_SEND_RESET, command, 2, NULL, NULL, OW_NO_READ);
 
 	OW_out_set_as_Power_pin();
 

@@ -22,105 +22,30 @@ Dialog DLL:      TCM.DLL V1.36.1.0
  
 <h2>Project:</h2>
 C:\Users\DaddyPig\Documents\GitHub\MySTM32\103\test103.uvprojx
-Project File Date:  12/25/2018
+Project File Date:  12/26/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
-compiling onewire.c...
-1-Wire\onewire.c(85): error:  #20: identifier "GPIO_InitTypeDef" is undefined
-  	GPIO_InitTypeDef GPIO_InitStruct;
-1-Wire\onewire.c(86): error:  #20: identifier "USART_InitTypeDef" is undefined
-  	USART_InitTypeDef USART_InitStructure;
-1-Wire\onewire.c(89): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
-  		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,
-1-Wire\onewire.c(89): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
-  		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,
-1-Wire\onewire.c(89): error:  #20: identifier "RCC_APB2Periph_AFIO" is undefined
-  		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,
-1-Wire\onewire.c(93): error:  #20: identifier "GPIO_Pin_9" is undefined
-  		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_9;
-1-Wire\onewire.c(94): error:  #20: identifier "GPIO_Mode_AF_OD" is undefined
-  		GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_OD;
-1-Wire\onewire.c(95): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
-  		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-1-Wire\onewire.c(97): warning:  #223-D: function "GPIO_Init" declared implicitly
-  		GPIO_Init(GPIOA, &GPIO_InitStruct);
-1-Wire\onewire.c(106): error:  #20: identifier "RCC_APB2Periph_USART1" is undefined
-  		RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
-1-Wire\onewire.c(108): warning:  #223-D: function "RCC_AHBPeriphClockCmd" declared implicitly
-  		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
-1-Wire\onewire.c(108): error:  #20: identifier "RCC_AHBPeriph_DMA1" is undefined
-  		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
-1-Wire\onewire.c(112): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
-  		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,
-1-Wire\onewire.c(112): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
-  		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,
-1-Wire\onewire.c(112): error:  #20: identifier "RCC_APB2Periph_AFIO" is undefined
-  		RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,
-1-Wire\onewire.c(115): error:  #20: identifier "GPIO_Pin_2" is undefined
-  		GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2;
-1-Wire\onewire.c(116): error:  #20: identifier "GPIO_Mode_AF_OD" is undefined
-  		GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_OD;
-1-Wire\onewire.c(117): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
-  		GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-1-Wire\onewire.c(119): warning:  #223-D: function "GPIO_Init" declared implicitly
-  		GPIO_Init(GPIOA, &GPIO_InitStruct);
-1-Wire\onewire.c(127): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
-  		RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
-1-Wire\onewire.c(127): error:  #20: identifier "RCC_APB1Periph_USART2" is undefined
-  		RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
-1-Wire\onewire.c(129): warning:  #223-D: function "RCC_AHBPeriphClockCmd" declared implicitly
-  		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
-1-Wire\onewire.c(129): error:  #20: identifier "RCC_AHBPeriph_DMA1" is undefined
-  		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
-1-Wire\onewire.c(133): error:  #20: identifier "USART_WordLength_8b" is undefined
-  	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-1-Wire\onewire.c(134): error:  #20: identifier "USART_StopBits_1" is undefined
-  	USART_InitStructure.USART_StopBits = USART_StopBits_1;
-1-Wire\onewire.c(135): error:  #20: identifier "USART_Parity_No" is undefined
-  	USART_InitStructure.USART_Parity = USART_Parity_No;
-1-Wire\onewire.c(137): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
-  			USART_HardwareFlowControl_None;
-1-Wire\onewire.c(138): error:  #20: identifier "USART_Mode_Tx" is undefined
-  	USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
-1-Wire\onewire.c(138): error:  #20: identifier "USART_Mode_Rx" is undefined
-  	USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
-1-Wire\onewire.c(140): warning:  #223-D: function "USART_Init" declared implicitly
-  	USART_Init(OW_USART, &USART_InitStructure);
-1-Wire\onewire.c(141): warning:  #223-D: function "USART_Cmd" declared implicitly
-  	USART_Cmd(OW_USART, ENABLE);
-1-Wire\onewire.c(143): warning:  #223-D: function "USART_HalfDuplexCmd" declared implicitly
-  	USART_HalfDuplexCmd(OW_USART, ENABLE);
-1-Wire\onewire.c(153): error:  #20: identifier "USART_InitTypeDef" is undefined
-  	USART_InitTypeDef USART_InitStructure;
-1-Wire\onewire.c(156): error:  #20: identifier "USART_WordLength_8b" is undefined
-  	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-1-Wire\onewire.c(157): error:  #20: identifier "USART_StopBits_1" is undefined
-  	USART_InitStructure.USART_StopBits = USART_StopBits_1;
-1-Wire\onewire.c(158): error:  #20: identifier "USART_Parity_No" is undefined
-  	USART_InitStructure.USART_Parity = USART_Parity_No;
-1-Wire\onewire.c(160): error:  #20: identifier "USART_HardwareFlowControl_None" is undefined
-  			USART_HardwareFlowControl_None;
-1-Wire\onewire.c(161): error:  #20: identifier "USART_Mode_Tx" is undefined
-  	USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
-1-Wire\onewire.c(161): error:  #20: identifier "USART_Mode_Rx" is undefined
-  	USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
-1-Wire\onewire.c(162): warning:  #223-D: function "USART_Init" declared implicitly
-  	USART_Init(OW_USART, &USART_InitStructure);
-1-Wire\onewire.c(165): warning:  #223-D: function "USART_ClearFlag" declared implicitly
-  	USART_ClearFlag(OW_USART, USART_FLAG_TC);
-1-Wire\onewire.c(165): error:  #20: identifier "USART_FLAG_TC" is undefined
-  	USART_ClearFlag(OW_USART, USART_FLAG_TC);
 compiling main.c...
+compiling onewire.c...
 compiling I2C_STM32F10x.c...
-compiling SPI_STM32F10x.c...
 compiling DMA_STM32F10x.c...
+compiling SPI_STM32F10x.c...
 compiling USART_STM32F10x.c...
 assembling startup_stm32f10x_md.s...
 compiling GPIO_STM32F10x.c...
 compiling system_stm32f10x.c...
-".\Objects\test103.axf" - 30 Error(s), 12 Warning(s).
+compiling misc.c...
+compiling stm32f10x_dma.c...
+compiling stm32f10x_gpio.c...
+compiling stm32f10x_i2c.c...
+compiling stm32f10x_spi.c...
+compiling stm32f10x_rcc.c...
+compiling stm32f10x_usart.c...
+linking...
+Program Size: Code=16148 RO-data=604 RW-data=48 ZI-data=1760  
+".\Objects\test103.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -143,6 +68,13 @@ Package Vendor: Keil
    * Component: DMA Version: 1.2
    * Component: GPIO Version: 1.3
    * Component: Startup Version: 1.0.0
+   * Component: DMA Version: 3.5.0
+   * Component: Framework Version: 3.5.1
+   * Component: GPIO Version: 3.5.0
+   * Component: I2C Version: 3.5.0
+   * Component: RCC Version: 3.5.0
+   * Component: SPI Version: 3.5.0
+   * Component: USART Version: 3.5.0
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\Device\STM32F103C8
@@ -150,6 +82,7 @@ Package Vendor: Keil
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Driver\Include
   C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+  C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\StdPeriph_Driver\inc
   C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\RTE_Driver
 
 <h2>Collection of Component Files used:</h2>
@@ -175,20 +108,50 @@ Package Vendor: Keil
       Source file:   RTE_Driver\USART_STM32F10x.c
 
    * Component: Keil::Device:DMA:1.2
-      Source file:   RTE_Driver\DMA_STM32F10x.c
       Include file:  RTE_Driver\DMA_STM32F10x.h
+      Source file:   RTE_Driver\DMA_STM32F10x.c
 
    * Component: Keil::Device:GPIO:1.3
       Include file:  RTE_Driver\GPIO_STM32F10x.h
       Source file:   RTE_Driver\GPIO_STM32F10x.c
 
    * Component: Keil::Device:Startup:1.0.0
-      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
-      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
       Source file:   Device\Source\system_stm32f10x.c
-Target not created.
-Build Time Elapsed:  00:00:03
+
+   * Component: Keil::Device:StdPeriph Drivers:DMA:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_dma.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_dma.h
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework:3.5.1
+      Source file:   Device\StdPeriph_Driver\src\misc.c
+      Include file:  Device\StdPeriph_Driver\templates\stm32f10x_it.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_it.c
+      Include file:  Device\StdPeriph_Driver\inc\misc.h
+      Source file:   Device\StdPeriph_Driver\templates\stm32f10x_conf.h
+
+   * Component: Keil::Device:StdPeriph Drivers:GPIO:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_gpio.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_gpio.c
+
+   * Component: Keil::Device:StdPeriph Drivers:I2C:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_i2c.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_i2c.h
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_rcc.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_rcc.c
+
+   * Component: Keil::Device:StdPeriph Drivers:SPI:3.5.0
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_spi.h
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_spi.c
+
+   * Component: Keil::Device:StdPeriph Drivers:USART:3.5.0
+      Source file:   Device\StdPeriph_Driver\src\stm32f10x_usart.c
+      Include file:  Device\StdPeriph_Driver\inc\stm32f10x_usart.h
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>
